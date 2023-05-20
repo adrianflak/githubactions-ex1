@@ -37,11 +37,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-          pytest --cov-report "xml:coverage.xml" --cov=. .
-    - name: Pytest coverage comment
-      uses: MishaKav/pytest-coverage-comment@main
-      with:
-        pytest-xml-coverage-path: ./coverage.xml
-        title: Coverage Report Python ${{ matrix.python-version }}
-        badge-title: Coverage Python ${{ matrix.python-version }}
-        unique-id-for-comment: Python-${{ matrix.python-version }}
+          pytest 
